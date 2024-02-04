@@ -1,0 +1,20 @@
+{
+    "header": "Next",
+    "subtitle": "I have had the opportunity to work extensively with Next.js. The framework not only simplifies the creation of dynamic, server-rendered React applications but also offers powerful features like automatic code splitting, server-side rendering, and efficient routing. Additionally, the built-in support for TypeScript and a thriving community contributed to a more maintainable and scalable codebase. Overall, Next.js has become my go-to framework for building performant and SEO-friendly web applications.",
+    "typing": "npx create-next-app@latest",
+    "user_experience": {
+        "title": "User experience",
+        "description": "Crafting a positive user experience has always been the focus of my development journey.",
+        "material_ui": "Material UI"
+    },
+    "contentful": {
+        "title": "Contentful",
+        "description": "Creating websites that can be easy customised without touching the code base.",
+        "components": "Setting up a contentful stucture that allows for creating new pages, new page components and adjusting the order of components."
+    },
+    "additional_experience": {
+        "title": "Additional experience",
+        "framer_motion": "Framer motion",
+        "three": "Three.js"
+    }
+}

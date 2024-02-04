@@ -1,0 +1,28 @@
+{
+    "header": {
+        "name": "AG"
+    },
+    "heading": {
+        "title": "Amy Gourlay",
+        "subtitle": "Web Applications Developer"
+    },
+    "work": {
+        "title": "My work",
+        "next_title": "My work with Next",
+        "next_subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "shopify_title": "My work with Shopify",
+        "shopify_subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    "technologies": {
+        "title": "My Skills",
+        "react": "React",
+        "typescript": "TypeScript",
+        "next": "NextJS",
+        "javascript": "JavaScript",
+        "node": "NodeJS"
+    },
+    "footer": {
+        "title": "AG 2023",
+        "email": "amy.gourlay@ntlworld.com"
+    }
+}

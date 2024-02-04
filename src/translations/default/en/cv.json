@@ -1,0 +1,61 @@
+{
+    "title": "Amy Gourlay",
+    "email": "amy.gourlay@ntlworld.com",
+    "subtitle": "I am a Web Application Developer with 2+ years' experience currently looking for new opportunities within the field of Frontend Development.",
+    "skills": {
+        "title": "Skills",
+        "prominent": "Prominent skills:",
+        "familiar": "Also familiar with:"
+    },
+    "education": {
+        "title": "Education and Qualification History",
+        "uod": {
+            "title": "The University of Dundee",
+            "subtitle": "School of Computing, Dundee, Scotland",
+            "qualification": "Bachelor of Science (1st Class Honours)",
+            "subject": "in Computing Science (2021)"
+        },
+        "hyndland": {
+            "title": "Hyndland Secondary School",
+            "subtitle": "Glasgow, Scotland",
+            "highers": "Scottish Higher Qualifications (AAAAABBB)",
+            "nationals": "National 5 Qualifications (AAAAAAAB)"
+        }
+    },
+    "publication": {
+        "title": "Peer Reviewed Publications (Juried)",
+        "type": "[CJ.1]",
+        "subtitle": "Amy Gourlay, Michael Crabb. Graphic Novel Subtitles: Requirement Elicitation and System Implementation. In Proceedings of the 2021 ACM IMX Conference on Interactive Media Experiences (IMX ’21). Online."
+    },
+    "work": {
+        "title": "Work Experience",
+        "mohc": {
+            "company": "MOHC",
+            "job": "Web Application Developer",
+            "description1": "Responsible for building and maintaining high quality web applications, including several ecommerce sites.",
+            "description2": "Experience working in large agile teams as well as on solo projects, taking a concept from discussion & design to a fully functional end-product. Participated in project planning by assigning accurate estimates for task difficulty and duration.",
+            "description3": "Directly communicated with clients and conveyed technical concepts in a friendly, easy-to-understand manner."
+        },
+        "uod": {
+            "company": "The University of Dundee",
+            "job": "Treasurer - Ultimate Frisbee Club",
+            "description1": "Keep track of all expenses, monitor money coming into the account, pay invoices, keep excel spreadsheet up-to-date and accurate.",
+            "description2": "Communicate with the other members of the committee and contribute to other responsibilities and events within the club."
+        }
+    },
+    "projects": {
+        "title": "Notable Projects and Achievements",
+        "research": {
+            "title": "Final Year Research Project",
+            "description": "I developed an alternative media consumption method that is based on combining video keyframes with subtitle text to create a comic-type experience. I found that the cognitive demands associated with watching subtitled material can often hinder the enjoyment of the content. Part of my project has been published at the ACM IMX’21 conference. I was also awarded the Sir James Black Award for this project for my outstanding contribution to research and scholarship in my field."
+        },
+        "outreach": {
+            "title": "Community Outreach",
+            "description": "I have promoted STEM opportunities within primary schools and have assisted in running code classes for children aged 7-10. In these classes, I taught basic coding principles and used the learning software, Scratch, as a method for students to participate in an interactive and engaging manner."
+        },
+        "exchange": {
+            "title": "International Summer Exchange",
+            "description": "I completed an 8-week summer exchange at East China University of Science and Technology in Shanghai. I conducted research involving medical technology and management of medical information. Supporting this I have taken Mandarin up to HSK2 and plan to continue this in the future."
+        }
+    }
+}

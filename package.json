@@ -1,0 +1,93 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run lint",
+    "commit-msg": "commitlint",
+    "predev": "npm run translations:compile",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build",
+    "translations:lint": "ts-node -r tsconfig-paths/register src/translations --lint",
+    "translations:compile": "ts-node -r tsconfig-paths/register src/translations --compile",
+    "lint": "tsc && eslint \"**/*.{js,mjs,ts,tsx}\" && prettier --check \"**/*.{js,mjs,ts,tsx,json,yml}\"",
+    "format": "tsc && eslint \"**/*.{js,mjs,ts,tsx}\" --fix && prettier --write --loglevel warn \"**/*.{js,mjs,ts,tsx,json,yml}\" && npm run translations:lint",
+    "clean": "del-cli tsconfig.tsbuildinfo .next .swc public/bootstrap.js public/locales"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.2",
+    "@mui/utils": "^5.14.1",
+    "@next/bundle-analyzer": "^13.4.13",
+    "@next/env": "^13.4.13",
+    "@plaiceholder/next": "^3.0.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/glob": "^8.0.0",
+    "@types/mkdirp": "^2.0.0",
+    "@types/react": "^18.2.19",
+    "@types/react-dom": "^18.2.7",
+    "@types/yargs": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "darkmode-js": "^1.5.7",
+    "eslint": "^8.46.0",
+    "eslint-config-next": "^13.4.12",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-consistent-default-export-name": "^0.0.15",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsdoc": "^46.4.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "flatten-anything": "^3.0.5",
+    "framer-motion": "^10.16.16",
+    "glob": "^8.0.3",
+    "husky": "^8.0.3",
+    "i18next": "^23.4.1",
+    "immer": "^10.0.2",
+    "lint-staged": "^14.0.1",
+    "material-ui-popup-state": "^5.0.9",
+    "merge-anything": "^5.1.7",
+    "mkdirp": "^3.0.1",
+    "next": "^13.4.12",
+    "next-i18next": "^14.0.0",
+    "polished": "^4.2.2",
+    "prettier": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.2",
+    "react-query": "^3.39.3",
+    "react-resize-detector": "^9.1.0",
+    "sharp": "^0.32.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "yargs": "^17.7.2"
+  },
+  "lint-staged": {
+    "**/*.{js,mjs,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*.{js,mjs,ts,tsx,json,yml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.3",
+    "@types/node": "18.11.9"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "header": "Shopify",
+    "subtitle": "I've had the opportunity to immerse myself in the dynamic world of Shopify development. Working extensively with the Shopify ecosystem, I became proficient in customizing themes, and extending functionalities through Shopify's Liquid templating language. I successfully integrated third-party apps, optimized product listings for a seamless shopping experience, and ensured responsive designs for a variety of devices. My experience also involved configuring and enhancing Shopify Plus features, meeting the unique needs of high-scale e-commerce businesses. Through this journey, I honed my skills in leveraging Shopify's APIs for seamless integrations and developing robust e-commerce solutions.",
+    "typing": "shopify theme init",
+    "experience": {
+        "title": "My experience",
+        "theme_customisation": "High quality theme customisation with a mobile-first approach",
+        "custom_sections": "Restyling and creating custom theme sections",
+        "quantity_controls": "Enhanced product quantity controls with maximum quantity restrictions across a range of product",
+        "delivery_timeline": "Estimated delivery date timeline",
+        "migration": "Migration to shopify theme version 2 and checkout version 2"
+    },
+    "google_tag_manager": {
+        "title": "Google Tag Manager integration",
+        "description": "Detailed analytics are important for an ecommerce website. I implemented a datalayer of relevant ecommerce events and set up the corresponding tags, triggers and variables on Google Tag Manager."
+    },
+    "algolia": {
+        "title": "Algolia integration",
+        "description": "Algolia is an alternative to Shopify's out-of-the-box search functionality. It provides a more robust search and discovery experience. I have imtegrated this functionality and styling into multiple Shopify projects."
+    },
+    "performance": {
+        "title": "Performance and SEO",
+        "description": "With large, complex web applications performance is always an important consideration. As a developer, I use Google Lighthouse to monitor and improve the performance, accessibility and SEO of my projects. And of course, these all relate to and affect eachother.",
+        "lazy_loading": "Lazy loading"
+    }
+}
