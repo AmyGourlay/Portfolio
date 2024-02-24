@@ -137,7 +137,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                             <Icon color={theme.palette.text.primary} name="close" />
                                         </Button>
                                         <Link
-                                            href="/home"
+                                            href="/"
                                             style={{
                                                 textDecoration: 'none',
                                             }}
@@ -185,7 +185,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                 </Drawer>
                                 <Stack spacing={Spacing.Header} direction="row" alignItems="center">
                                     <Link
-                                        href="/home"
+                                        href="/"
                                         style={{
                                             textDecoration: 'none',
                                         }}
@@ -199,7 +199,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                             <>
                                 <Stack spacing={Spacing.Header} direction="row" alignItems="center">
                                     <Link
-                                        href="/home"
+                                        href="/"
                                         style={{
                                             textDecoration: 'none',
                                         }}
