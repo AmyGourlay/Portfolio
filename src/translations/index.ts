@@ -9,19 +9,19 @@ import { promisify } from 'node:util'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { parseFile } from 'src/utils/parseFile'
 import config from 'src/translations/config.json'
+import { parseFile } from 'src/utils/parseFile'
 
 const argv = yargs(hideBin(process.argv)).argv as Record<string, unknown>
 
 loadEnvConfig(process.cwd())
 
-const glob = promisify(_glob as any)
+const glob = promisify(_glob)
 
 const getNamespaces = async (): Promise<Set<string>> => {
     const files = await glob('src/translations/default/en/*.json')
 
-    return new Set(files.map((file: any) => parseFile(file).fileName))
+    return new Set(files.map((file) => parseFile(file).fileName))
 }
 
 const compile = async (): Promise<void> => {

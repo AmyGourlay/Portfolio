@@ -1,14 +1,15 @@
 import { FunctionComponent } from 'react'
 
-import { Box, Typography, } from '@mui/material'
-import Section from 'src/general/Section'
-import Icon from 'src/general/Icon'
+import { Box, Typography } from '@mui/material'
 import Link from 'next/link'
 
+import Icon from 'src/general/Icon'
+import Section from 'src/general/Section'
+
 interface ProjectScreenProps {
-    title: string
-    subtitle: string
-    typingText?: string
+    readonly title: string
+    readonly subtitle: string
+    readonly typingText?: string
 }
 
 /**
@@ -17,10 +18,25 @@ interface ProjectScreenProps {
 const ProjectScreen: FunctionComponent<ProjectScreenProps> = ({ title, subtitle, typingText }) => {
     return (
         <Section maxWidth="xl" isFullScreen>
-            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+            <Box 
+                sx={{
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    height: '100%', 
+                }}
+            >
                 <Typography variant="h1" mb={4}>{title}</Typography>
                 <Typography align='center' mb={4}>{subtitle}</Typography>
-                <Box sx={{ backgroundColor: 'black', width: '300px', display: 'flex', justifyContent: 'center' }}>
+                <Box 
+                    sx={{
+                        backgroundColor: 'black', 
+                        width: '300px', 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                    }}
+                >
                     <Typography
                         align="center"
                         variant="body1"
@@ -53,7 +69,7 @@ const ProjectScreen: FunctionComponent<ProjectScreenProps> = ({ title, subtitle,
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             fontFamily: 'monospace',
-                            color: 'white'
+                            color: 'white',
                         }}
                     >
                         {typingText}

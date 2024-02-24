@@ -1,12 +1,13 @@
 import { ReactNode } from 'react'
 
-import DefaultThemeProvider from 'src/general/DefaultThemeProvider'
-import { NextPageWithLayout } from 'src/types'
-import PageLayout from 'src/general/PageLayout'
-import Section from 'src/general/Section'
 import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+
+import DefaultThemeProvider from 'src/general/DefaultThemeProvider'
+import PageLayout from 'src/general/PageLayout'
+import Section from 'src/general/Section'
 import ProjectScreen from 'src/sections/ProjectScreen'
+import { NextPageWithLayout } from 'src/types'
 
 const Page: NextPageWithLayout = () => {
     const { t } = useTranslation()

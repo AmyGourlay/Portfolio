@@ -313,7 +313,6 @@
         "jsdoc/check-syntax": "error",
         "jsdoc/empty-tags": "error",
         "jsdoc/match-description": "error",
-        "jsdoc/newline-after-description": "error",
         "jsdoc/no-bad-blocks": "error",
         "jsdoc/require-description": "error",
         "jsdoc/require-description-complete-sentence": "error",

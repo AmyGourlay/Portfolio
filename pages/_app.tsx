@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 
+import Darkmode from 'darkmode-js'
 import i18n from 'i18next'
 import { enableMapSet } from 'immer'
 import { AppProps } from 'next/app'
@@ -7,7 +8,6 @@ import Head from 'next/head'
 import { initReactI18next } from 'react-i18next'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import Darkmode from 'darkmode-js'
 
 import { resources } from 'src/translations/resources'
 import { NextPageWithLayout } from 'src/types'
@@ -17,7 +17,7 @@ import { NextPageWithLayout } from 'src/types'
 import '../styles.css'
 
 interface CustomAppProps extends AppProps {
-    Component: NextPageWithLayout
+    readonly Component: NextPageWithLayout
 }
 
 enableMapSet()

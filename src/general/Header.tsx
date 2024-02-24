@@ -20,11 +20,11 @@ interface MenuOptions {
 }
 
 interface HeaderProps {
-    disableStickyShadow?: boolean
-    order?: number
-    menuOptions?: MenuOptions[]
-    color?: string
-    isDarkMode?: boolean
+    readonly disableStickyShadow?: boolean
+    readonly order?: number
+    readonly menuOptions?: MenuOptions[]
+    readonly color?: string
+    readonly isDarkMode?: boolean
 }
 
 interface HeaderRootProps {
@@ -65,9 +65,18 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
     const md = width && width < theme.breakpoints.values.lg
 
     const menuOptions = [
-        { displayName: "CV", slug: "cv"}, 
-        { displayName: "Next", slug: "projects/next"}, 
-        { displayName: "Shopify", slug: "projects/shopify"}
+        {
+            displayName: 'CV', 
+            slug: 'cv',
+        }, 
+        {
+            displayName: 'Next', 
+            slug: 'projects/next',
+        }, 
+        {
+            displayName: 'Shopify', 
+            slug: 'projects/shopify',
+        },
     ]
 
     const drawerPopupState = usePopupState({
@@ -186,7 +195,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                 </Stack>
                             </>
                         ) : null}
-                        {!md ? (
+                        {md ? null : (
                             <>
                                 <Stack spacing={Spacing.Header} direction="row" alignItems="center">
                                     <Link
@@ -231,7 +240,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                     ))}
                                 </Box>
                             </>
-                        ) : null}
+                        )}
                     </Box>
                 </HeaderRoot>
             </div>

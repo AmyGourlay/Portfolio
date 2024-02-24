@@ -7,11 +7,11 @@ import { MaterialSymbol } from 'src/materialSymbolsTypes'
 import { Color } from 'src/theme/types'
 
 interface IconProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'size'> {
-    name: MaterialSymbol | string
-    filled?: boolean
-    color?: Color | 'inherit' | string
-    size?: IconSize
-    weight?: IconWeight
+    readonly name: MaterialSymbol | string
+    readonly filled?: boolean
+    readonly color?: Color | 'inherit' | string
+    readonly size?: IconSize
+    readonly weight?: IconWeight
 }
 
 // TODO: change to sm/md/lg/xl

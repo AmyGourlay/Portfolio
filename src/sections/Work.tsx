@@ -1,13 +1,14 @@
 import { FunctionComponent } from 'react'
 
 import { Box, Card, CardMedia, Typography } from '@mui/material'
-import Section from 'src/general/Section'
-import { useTranslation } from 'react-i18next'
-import { theme } from 'src/theme/theme.default'
-import nextCodeSnippet from 'assets/next-code-snippet-2.png'
+import nextCodeSnippet2 from 'assets/next-code-snippet-2.png'
 import shopifyIcon from 'assets/shopify-icon.png'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
+
 import Icon from 'src/general/Icon'
+import Section from 'src/general/Section'
+import { theme } from 'src/theme/theme.default'
 
 /**
  * Work section.
@@ -43,7 +44,7 @@ const Work: FunctionComponent = () => {
                     <CardMedia
                         id="backgroundImage"
                         title=""
-                        image={nextCodeSnippet.src}
+                        image={nextCodeSnippet2.src}
                         sx={{
                             height: '200px',
                             [theme.breakpoints.up('md')]: {
@@ -51,8 +52,19 @@ const Work: FunctionComponent = () => {
                             },
                         }}
                     />
-                    <Link href="/projects/next" style={{ textDecoration: 'none', color: theme.palette.text.primary }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Link 
+                        href="/projects/next" 
+                        style={{
+                            textDecoration: 'none', 
+                            color: theme.palette.text.primary, 
+                        }}
+                    >
+                        <Box 
+                            sx={{
+                                display: 'flex', 
+                                alignItems: 'center', 
+                            }}
+                        >
                             <Typography p={2} variant='h4'>
                                 {t('home:work.next_title')}
                             </Typography>
@@ -84,8 +96,19 @@ const Work: FunctionComponent = () => {
                             },
                         }}
                     />
-                    <Link href="/projects/shopify" style={{ textDecoration: 'none', color: theme.palette.text.primary }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Link 
+                        href="/projects/shopify" 
+                        style={{
+                            textDecoration: 'none', 
+                            color: theme.palette.text.primary, 
+                        }}
+                    >
+                        <Box 
+                            sx={{
+                                display: 'flex', 
+                                alignItems: 'center', 
+                            }}
+                        >
                             <Typography p={2} variant='h4'>
                                 {t('home:work.shopify_title')}
                             </Typography>

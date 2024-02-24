@@ -3,7 +3,12 @@ import { ReactElement } from 'react'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 const CustomDocument = (): ReactElement => (
-    <Html lang="en" style={{ scrollBehavior: 'smooth' }}>
+    <Html 
+        lang="en" 
+        style={{
+            scrollBehavior: 'smooth', 
+        }}
+    >
         <Head>
             <link rel="shortcut icon" href="/favicon.ico" />
             {/* Fonts are inlined for optimization, see https://nextjs.org/docs/basic-features/font-optimization */}

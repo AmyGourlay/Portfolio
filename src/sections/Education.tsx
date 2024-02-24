@@ -1,13 +1,14 @@
 import { FunctionComponent } from 'react'
 
 import { Box, Card, Typography } from '@mui/material'
-import Section from 'src/general/Section'
-import { useTranslation } from 'react-i18next'
-import { theme } from 'src/theme/theme.default'
-import Image from 'next/image'
-import UoD from 'assets/uod.png'
 import Hyndland from 'assets/hyndland.png'
+import UoD from 'assets/uod.png'
+import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import { useResizeDetector } from 'react-resize-detector'
+
+import Section from 'src/general/Section'
+import { theme } from 'src/theme/theme.default'
 
 /**
  * Education section.
@@ -33,7 +34,7 @@ const Education: FunctionComponent = () => {
                         alignItems: 'center', 
                         padding: 2, 
                         backgroundColor: theme.palette.background.default,
-                        border: "2px solid black"
+                        border: '2px solid black',
                     }}
                 >
                     <Box
@@ -47,7 +48,12 @@ const Education: FunctionComponent = () => {
                             },
                         }} 
                     >
-                        <Box sx={{ width: '200px', height: 'auto' }}>
+                        <Box 
+                            sx={{
+                                width: '200px', 
+                                height: 'auto', 
+                            }}
+                        >
                             <Image
                                 alt="UoD" 
                                 src={UoD.src}
@@ -57,21 +63,21 @@ const Education: FunctionComponent = () => {
                                     maxWidth:'100%',
                                     minWidth: '200px',
                                     height: 'auto',
-                                    width: 'auto'
+                                    width: 'auto',
                                 }}
                             />
                         </Box>
                         <Box ml={sm ? 0 : 5} mt={sm ? 2 : 0}>
-                            <Typography fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.uod.title')} 
                             </Typography>
-                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? "center" : "left"}>
+                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.uod.subtitle')} 
                             </Typography>
-                            <Typography variant="body2" fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.uod.qualification')} 
                             </Typography>
-                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? "center" : "left"}>
+                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.uod.subject')}
                             </Typography>
                         </Box>
@@ -86,7 +92,7 @@ const Education: FunctionComponent = () => {
                         justifyContent: 'flex-end', 
                         padding: 2, 
                         backgroundColor: theme.palette.background.default,
-                        border: "2px solid black"
+                        border: '2px solid black',
                     }}
                 >
                     <Box
@@ -102,20 +108,26 @@ const Education: FunctionComponent = () => {
                         }} 
                     >
                         <Box ml={sm ? 0 : 5} mt={sm ? 2 : 0} order={sm ? 1 : 0}>
-                            <Typography fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.hyndland.title')}
                             </Typography>
-                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? "center" : "left"}>
+                            <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.hyndland.subtitle')}
                             </Typography>
-                            <Typography variant="body2" fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.hyndland.highers')}
                             </Typography>
-                            <Typography variant="body2" fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.hyndland.nationals')}
                             </Typography>
                         </Box>
-                        <Box order={sm ? 0 : 1} sx={{ width: '200px', height: 'auto' }}>
+                        <Box 
+                            order={sm ? 0 : 1} 
+                            sx={{
+                                width: '200px', 
+                                height: 'auto', 
+                            }}
+                        >
                             <Image
                                 alt="Hyndland" 
                                 src={Hyndland.src}
@@ -125,7 +137,7 @@ const Education: FunctionComponent = () => {
                                     maxWidth:'100%',
                                     minWidth: '200px',
                                     height: 'auto',
-                                    width: 'auto'
+                                    width: 'auto',
                                 }}
                             />
                         </Box>

@@ -12,8 +12,8 @@ interface menuOptions {
 }
 
 interface PageLayoutProps {
-    title?: string
-    menuOptions?: menuOptions[]
+    readonly title?: string
+    readonly menuOptions?: menuOptions[]
 }
 
 /**

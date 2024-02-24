@@ -7,12 +7,10 @@ import { Spacing } from 'src/general/utils/config'
 import { theme } from 'src/theme/theme.default'
 
 interface SectionProps extends Except<ContainerProps, 'sx'> {
-    backgroundColor?: string
-    fadeType?: string
-    isFullScreen?: boolean
-    isDarkMode?: boolean
-    hasEllipse?: boolean
-    backgroundImage?: string
+    readonly backgroundColor?: string
+    readonly fadeType?: string
+    readonly isFullScreen?: boolean
+    readonly backgroundImage?: string
 }
 
 /**
@@ -22,8 +20,6 @@ const Section: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     children,
     maxWidth = 'sm',
     isFullScreen = false,
-    isDarkMode = false,
-    hasEllipse = false,
     fadeType = 'none',
     backgroundColor = theme.palette.background.default,
     backgroundImage = undefined,

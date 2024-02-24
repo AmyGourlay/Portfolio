@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react'
 
 import { Box, Card, Typography } from '@mui/material'
-import Section from 'src/general/Section'
 import { useTranslation } from 'react-i18next'
+
+import Section from 'src/general/Section'
 import { theme } from 'src/theme/theme.default'
 
 /**
@@ -19,12 +20,12 @@ const Projects: FunctionComponent = () => {
             <Card 
                 variant="outlined" 
                 sx={{ 
-                    marginBottom: "20px", 
+                    marginBottom: '20px', 
                     display: 'flex', 
                     alignItems: 'center', 
-                    padding: "20px", 
+                    padding: '20px', 
                     backgroundColor: theme.palette.background.default,
-                    border: "2px solid black"
+                    border: '2px solid black',
                 }}
             >
                 <Box>

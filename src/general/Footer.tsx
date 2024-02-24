@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next'
 import { GeneralConfig, Spacing } from 'src/general/utils/config'
 
 interface FooterProps {
-    disableStickyShadow?: boolean
-    order?: number
+    readonly disableStickyShadow?: boolean
+    readonly order?: number
 }
 
 interface FooterRootProps {

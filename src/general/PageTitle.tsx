@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import Head from 'next/head'
 
 interface PageTitleProps {
-    children?: string
+    readonly children?: string
 }
 
 const PageTitle: FunctionComponent<PageTitleProps> = ({ children }) => {

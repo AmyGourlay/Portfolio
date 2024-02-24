@@ -1,12 +1,13 @@
 import { FunctionComponent } from 'react'
 
 import { Box, Card, Typography } from '@mui/material'
-import Section from 'src/general/Section'
-import { useTranslation } from 'react-i18next'
-import { theme } from 'src/theme/theme.default'
+import imx from 'assets/imx.png'
 import Image from 'next/image'
-import IMX from 'assets/imx.jpg'
+import { useTranslation } from 'react-i18next'
 import { useResizeDetector } from 'react-resize-detector'
+
+import Section from 'src/general/Section'
+import { theme } from 'src/theme/theme.default'
 
 /**
  * Publication section.
@@ -27,12 +28,12 @@ const Publication: FunctionComponent = () => {
                 <Card 
                     variant="outlined" 
                     sx={{ 
-                        marginBottom: "20px", 
+                        marginBottom: '20px', 
                         display: 'flex', 
                         alignItems: 'center', 
-                        padding: "20px", 
+                        padding: '20px', 
                         backgroundColor: theme.palette.background.default,
-                        border: "2px solid black"
+                        border: '2px solid black',
                     }}
                 >
                     <Box
@@ -46,25 +47,30 @@ const Publication: FunctionComponent = () => {
                             },
                         }} 
                     >
-                        <Box sx={{ width: '200px', height: 'auto' }}>
+                        <Box 
+                            sx={{
+                                width: '200px', 
+                                height: 'auto', 
+                            }}
+                        >
                             <Image
                                 alt="IMX" 
-                                src={IMX.src}
-                                width={IMX.width}
-                                height={IMX.height}
+                                src={imx.src}
+                                width={imx.width}
+                                height={imx.height}
                                 style={{
                                     maxWidth:'100%',
                                     minWidth: '200px',
                                     height: 'auto',
-                                    width: 'auto'
+                                    width: 'auto',
                                 }}
                             />
                         </Box>
                         <Box ml={sm ? 0 : 5}>
-                            <Typography variant="body2" fontWeight="bold" align={sm ? "center" : "left"}>
+                            <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
                                 {t('cv:publication.type')} 
                             </Typography>
-                            <Typography variant="body2" align={sm ? "center" : "left"}>
+                            <Typography variant="body2" align={sm ? 'center' : 'left'}>
                                 {t('cv:publication.subtitle')} 
                             </Typography>
                         </Box>
