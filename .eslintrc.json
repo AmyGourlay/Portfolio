@@ -118,7 +118,7 @@
             }
         ],
         "no-restricted-syntax": "off",
-        "camelcase": "error",
+        "camelcase": "off",
         "no-underscore-dangle": [
             "error",
             {
