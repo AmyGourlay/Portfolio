@@ -1,6 +1,6 @@
 import { FunctionComponent, useRef } from 'react'
 
-import { Box, Typography, Unstable_Grid2 } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import js from 'assets/js.png'
 import next from 'assets/next.png'
 import nodeJs from 'assets/node-js.png'
@@ -41,231 +41,158 @@ const Technologies: FunctionComponent = () => {
             }}
             ref={scrollRef}
         >
-            <Section maxWidth="xl" backgroundColor='#fff'>
-                <Typography mb={6} variant="h2">{t('home:technologies.title')}</Typography>
-                <Unstable_Grid2 
-                    container 
-                    spacing={{
-                        xs: 3, 
-                        lg: 6, 
-                    }}
-                >
-                    <Unstable_Grid2 xs={12} sm={6} lg={4}>
-                        <motion.li
-                            style={{
-                                listStyleType: 'none',
-                                margin: '10px',
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center',
-                            }}
-                            variants={cardVariants}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.05,
-                            }}
-                        >
-                            <Box 
-                                sx={{
-                                    width: 'auto', 
-                                    height: '250px', 
-                                }}
-                            >
-                                <Image
-                                    alt="react" 
-                                    src={react.src}
-                                    width={react.width}
-                                    height={react.height}
-                                    style={{
-                                        maxHeight:'100%',
-                                        height: 'auto',
-                                        width: 'auto',
-                                    }}
-                                />
-                            </Box>
-                            <Typography mt={2} variant="h2">{t('home:technologies.react')}</Typography>
-                        </motion.li>
-                    </Unstable_Grid2>
-                    <Unstable_Grid2 
-                        xs={12} 
-                        sm={6} 
-                        lg={4} 
-                        sx={{
-                            display: 'flex', flexDirection: 'column', alignItems: 'center', 
+            <Section maxWidth="xl" backgroundColor="#fff">
+                <Typography mb={6} variant="h2">
+                    {t('home:technologies.title')}
+                </Typography>
+                <Box m={2}>
+                    <motion.li
+                        variants={cardVariants}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.05,
                         }}
                     >
-                        <motion.li
-                            style={{
-                                listStyleType: 'none',
-                                margin: '10px',
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center',
-                            }}
-                            variants={cardVariants}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.1,
+                        <Box
+                            sx={{
+                                width: 'auto',
+                                height: '250px',
                             }}
                         >
-                            <Box 
-                                sx={{
-                                    width: 'auto', 
-                                    height: '250px', 
+                            <Image
+                                alt="react"
+                                src={react.src}
+                                width={react.width}
+                                height={react.height}
+                                style={{
+                                    maxHeight: '100%',
+                                    height: 'auto',
+                                    width: 'auto',
                                 }}
-                            >
-                                <Image 
-                                    alt="ts" 
-                                    src={typescript.src} 
-                                    width={typescript.width}
-                                    height={typescript.height}
-                                    style={{
-                                        maxHeight:'100%',
-                                        height: 'auto',
-                                        width: 'auto',
-                                    }}
-                                />
-                            </Box>
-                            <Typography mt={2} variant="h2">{t('home:technologies.typescript')}</Typography>
-                        </motion.li>
-                    </Unstable_Grid2>
-                    <Unstable_Grid2 
-                        xs={12} 
-                        sm={6} 
-                        lg={4} 
-                        sx={{
-                            display: 'flex', 
-                            flexDirection: 'column', 
-                            alignItems: 'center', 
+                            />
+                        </Box>
+                        <Typography mt={2} variant="h2">
+                            {t('home:technologies.react')}
+                        </Typography>
+                    </motion.li>
+                    <motion.li
+                        variants={cardVariants}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.1,
                         }}
                     >
-                        <motion.li
-                            style={{
-                                listStyleType: 'none',
-                                margin: '10px',
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center',
-                            }}
-                            variants={cardVariants}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.15,
+                        <Box
+                            sx={{
+                                width: 'auto',
+                                height: '250px',
                             }}
                         >
-                            <Box 
-                                sx={{
-                                    width: 'auto', 
-                                    height: '250px', 
+                            <Image
+                                alt="ts"
+                                src={typescript.src}
+                                width={typescript.width}
+                                height={typescript.height}
+                                style={{
+                                    maxHeight: '100%',
+                                    height: 'auto',
+                                    width: 'auto',
                                 }}
-                            >
-                                <Image 
-                                    alt="next" 
-                                    src={next.src} 
-                                    width={next.width}
-                                    height={next.height}
-                                    style={{
-                                        maxHeight:'100%',
-                                        height: 'auto',
-                                        width: 'auto',
-                                        mixBlendMode: 'normal',
-                                    }} 
-                                />
-                            </Box>
-                            <Typography mt={2} variant="h2">{t('home:technologies.next')}</Typography>
-                        </motion.li>
-                    </Unstable_Grid2>
-                    <Unstable_Grid2 
-                        xs={12} 
-                        sm={6} 
-                        lg={4} 
-                        lgOffset={2} 
-                        sx={{
-                            display: 'flex', 
-                            flexDirection: 'column', 
-                            alignItems: 'center', 
+                            />
+                        </Box>
+                        <Typography mt={2} variant="h2">
+                            {t('home:technologies.typescript')}
+                        </Typography>
+                    </motion.li>
+                    <motion.li
+                        variants={cardVariants}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.15,
                         }}
                     >
-                        <motion.li
-                            style={{
-                                listStyleType: 'none',
-                                margin: '10px',
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center',
-                            }}
-                            variants={cardVariants}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.2,
+                        <Box
+                            sx={{
+                                width: 'auto',
+                                height: '250px',
                             }}
                         >
-                            <Box 
-                                sx={{
-                                    width: 'auto', height: '250px', 
+                            <Image
+                                alt="next"
+                                src={next.src}
+                                width={next.width}
+                                height={next.height}
+                                style={{
+                                    maxHeight: '100%',
+                                    height: 'auto',
+                                    width: 'auto',
+                                    mixBlendMode: 'normal',
                                 }}
-                            >
-                                <Image 
-                                    alt="js" 
-                                    src={js.src} 
-                                    width={js.width}
-                                    height={js.height}
-                                    style={{
-                                        maxHeight:'100%',
-                                        height: 'auto',
-                                        width: 'auto',
-                                    }}
-                                />
-                            </Box>
-                            <Typography mt={2} variant="h2">{t('home:technologies.javascript')}</Typography>
-                        </motion.li>
-                    </Unstable_Grid2>
-                    <Unstable_Grid2 
-                        xs={12} 
-                        sm={6} 
-                        lg={4} 
-                        smOffset={3} 
-                        lgOffset={0} 
-                        sx={{
-                            display: 'flex', flexDirection: 'column', alignItems: 'center', 
+                            />
+                        </Box>
+                        <Typography mt={2} variant="h2">
+                            {t('home:technologies.next')}
+                        </Typography>
+                    </motion.li>
+                    <motion.li
+                        variants={cardVariants}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.2,
                         }}
                     >
-                        <motion.li
-                            style={{
-                                listStyleType: 'none',
-                                margin: '10px',
-                                display: 'flex', 
-                                flexDirection: 'column', 
-                                alignItems: 'center',
-                            }}
-                            variants={cardVariants}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.25,
+                        <Box
+                            sx={{
+                                width: 'auto',
+                                height: '250px',
                             }}
                         >
-                            <Box 
-                                sx={{
-                                    width: 'auto', 
-                                    height: '250px', 
+                            <Image
+                                alt="js"
+                                src={js.src}
+                                width={js.width}
+                                height={js.height}
+                                style={{
+                                    maxHeight: '100%',
+                                    height: 'auto',
+                                    width: 'auto',
                                 }}
-                            >
-                                <Image 
-                                    alt="node" 
-                                    src={nodeJs.src} 
-                                    width={nodeJs.width}
-                                    height={nodeJs.height}
-                                    style={{
-                                        maxHeight:'100%',
-                                        height: 'auto',
-                                        width: 'auto',
-                                    }} 
-                                />
-                            </Box>
-                            <Typography mt={2} variant="h2">{t('home:technologies.node')}</Typography>
-                        </motion.li>
-                    </Unstable_Grid2>
-                </Unstable_Grid2>
+                            />
+                        </Box>
+                        <Typography mt={2} variant="h2">
+                            {t('home:technologies.javascript')}
+                        </Typography>
+                    </motion.li>
+                    <motion.li
+                        variants={cardVariants}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.25,
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                width: 'auto',
+                                height: '250px',
+                            }}
+                        >
+                            <Image
+                                alt="node"
+                                src={nodeJs.src}
+                                width={nodeJs.width}
+                                height={nodeJs.height}
+                                style={{
+                                    maxHeight: '100%',
+                                    height: 'auto',
+                                    width: 'auto',
+                                }}
+                            />
+                        </Box>
+                        <Typography mt={2} variant="h2">
+                            {t('home:technologies.node')}
+                        </Typography>
+                    </motion.li>
+                </Box>
             </Section>
         </motion.div>
     )

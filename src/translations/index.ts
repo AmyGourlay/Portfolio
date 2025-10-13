@@ -1,13 +1,12 @@
 import { loadEnvConfig } from '@next/env'
 import { flatten } from 'flatten-anything'
-import _glob from 'glob'
 import { merge } from 'merge-anything'
 import { mkdirp } from 'mkdirp'
 import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
-import { promisify } from 'node:util'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
+import { glob } from 'glob'
 
 import config from 'src/translations/config.json'
 import { parseFile } from 'src/utils/parseFile'
@@ -15,8 +14,6 @@ import { parseFile } from 'src/utils/parseFile'
 const argv = yargs(hideBin(process.argv)).argv as Record<string, unknown>
 
 loadEnvConfig(process.cwd())
-
-const glob = promisify(_glob)
 
 const getNamespaces = async (): Promise<Set<string>> => {
     const files = await glob('src/translations/default/en/*.json')

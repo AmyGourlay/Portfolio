@@ -1,16 +1,16 @@
 import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { Box, Container, ContainerProps } from '@mui/material'
-import { Except } from 'type-fest'
 
 import { Spacing } from 'src/general/utils/config'
 import { theme } from 'src/theme/theme.default'
 
-interface SectionProps extends Except<ContainerProps, 'sx'> {
+interface SectionProps extends ContainerProps {
     readonly backgroundColor?: string
     readonly fadeType?: string
     readonly isFullScreen?: boolean
     readonly backgroundImage?: string
+    readonly maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false
 }
 
 /**
