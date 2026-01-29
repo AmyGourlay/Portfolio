@@ -8,8 +8,8 @@ import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 import { glob } from 'glob'
 
-import config from 'src/translations/config.json'
-import { parseFile } from 'src/utils/parseFile'
+import config from '@/translations/config.json'
+import { parseFile } from '@/utils/parseFile'
 
 const argv = yargs(hideBin(process.argv)).argv as Record<string, unknown>
 

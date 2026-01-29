@@ -3,8 +3,8 @@ import { FunctionComponent } from 'react'
 import { Box, Typography } from '@mui/material'
 import Link from 'next/link'
 
-import Icon from 'src/general/Icon'
-import Section from 'src/general/Section'
+import Section from '@/general/Section'
+import { ExpandMore } from '@mui/icons-material'
 
 interface ProjectScreenProps {
     readonly title: string
@@ -18,23 +18,27 @@ interface ProjectScreenProps {
 const ProjectScreen: FunctionComponent<ProjectScreenProps> = ({ title, subtitle, typingText }) => {
     return (
         <Section maxWidth="xl" isFullScreen>
-            <Box 
+            <Box
                 sx={{
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    justifyContent: 'center', 
-                    alignItems: 'center', 
-                    height: '100%', 
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
                 }}
             >
-                <Typography variant="h1" mb={4}>{title}</Typography>
-                <Typography align='center' mb={4}>{subtitle}</Typography>
-                <Box 
+                <Typography variant="h1" mb={4}>
+                    {title}
+                </Typography>
+                <Typography align="center" mb={4}>
+                    {subtitle}
+                </Typography>
+                <Box
                     sx={{
-                        backgroundColor: 'black', 
-                        width: '300px', 
-                        display: 'flex', 
-                        justifyContent: 'center', 
+                        backgroundColor: 'black',
+                        width: '300px',
+                        display: 'flex',
+                        justifyContent: 'center',
                     }}
                 >
                     <Typography
@@ -94,7 +98,7 @@ const ProjectScreen: FunctionComponent<ProjectScreenProps> = ({ title, subtitle,
                     }}
                 >
                     <Link href="#scroll">
-                        <Icon size="large" color="black" name="expand_more" />
+                        <ExpandMore />
                     </Link>
                 </Box>
             </Box>

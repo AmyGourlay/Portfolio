@@ -1,12 +1,12 @@
 import { alpha, buttonClasses, circularProgressClasses, createTheme, darken, ThemeOptions } from '@mui/material'
 import { rem } from 'polished'
 
-import { GeneralConfig, Spacing } from 'src/general/utils/config'
-import { FontFamilyConfig, Palette, ThemeOptionsComponents } from 'src/theme/types'
-import { assertColor } from 'src/theme/utils/assertColor'
+import { GeneralConfig, Spacing } from '@/general/utils/config'
+import { FontFamilyConfig, Palette, ThemeOptionsComponents } from '@/theme/types'
+import { assertColor } from '@/theme/utils/assertColor'
 
 const fontFamilyConfig: FontFamilyConfig = {
-    name: 'indivisible',
+    name: 'var(--font-poppins)',
     weights: {
         light: 300,
         regular: 500,
@@ -170,8 +170,8 @@ const opacity = {
 }
 
 const colors = {
-    primary: '#101010',
-    secondary: '#fff',
+    primary: '#F5E1D9',
+    secondary: '#101010',
     info: '#3F69FF', //#9B37FF
     error: '#FA391F',
     warning: '#FFB321',
@@ -183,13 +183,13 @@ const palette: Palette = {
         light: colors.primary,
         main: colors.primary,
         dark: colors.primary,
-        contrastText: '#fff',
+        contrastText: '#101010',
     },
     secondary: {
         light: alpha(colors.secondary, opacity.selectedOpacity),
         main: colors.secondary,
         dark: darken(colors.secondary, 0.75),
-        contrastText: '#101010',
+        contrastText: '#fff',
     },
     info: {
         light: alpha(colors.info, opacity.selectedOpacity),
@@ -217,7 +217,7 @@ const palette: Palette = {
     },
 }
 
-const textColor = palette.primary.main
+const textColor = '#101010'
 
 const options: ThemeOptions = {
     components,
@@ -250,17 +250,15 @@ const options: ThemeOptions = {
     },
     shadows: [
         'none',
-        // Default paper shadow
         [
-            `0 0px  4px ${alpha(textColor, 0.025)}`,
-            `0 2px  8px ${alpha(textColor, 0.05)}`,
-            `0 4px 16px ${alpha(textColor, 0.075)}`,
-            `0 6px 24px ${alpha(textColor, 0.1)}`,
+            `0 0px  4px ${alpha(palette.secondary.main, 0.025)}`,
+            `0 2px  8px ${alpha(palette.secondary.main, 0.05)}`,
+            `0 4px 16px ${alpha(palette.secondary.main, 0.075)}`,
+            `0 6px 24px ${alpha(palette.secondary.main, 0.1)}`,
         ].join(','),
-        // Scroll indicator shadow
-        `0 0 6px ${alpha(textColor, 0.075)}, 0 0 8px ${alpha(textColor, 0.1)}`,
+        `0 0 6px ${alpha(palette.secondary.main, 0.075)}, 0 0 8px ${alpha(palette.secondary.main, 0.1)}`,
         // Unusable shadows reserved for future
-        '0 0 0 5px #f00',
+        `0 0 6px ${alpha(palette.primary.main, 0.5)}, 0 0 8px ${alpha(palette.primary.main, 0.9)}`,
         '0 0 0 5px #f00',
         '0 0 0 5px #f00',
         '0 0 0 5px #f00',

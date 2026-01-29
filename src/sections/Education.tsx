@@ -7,8 +7,8 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { useResizeDetector } from 'react-resize-detector'
 
-import Section from 'src/general/Section'
-import { theme } from 'src/theme/theme.default'
+import Section from '@/general/Section'
+import { theme } from '@/theme/theme.default'
 
 /**
  * Education section.
@@ -24,15 +24,15 @@ const Education: FunctionComponent = () => {
         <div ref={ref}>
             <Section maxWidth="xl">
                 <Typography mb={2} variant="h4" fontWeight="bold">
-                    {t('cv:education.title')} 
+                    {t('cv:education.title')}
                 </Typography>
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
-                        marginBottom: 2, 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        padding: 2, 
+                <Card
+                    variant="outlined"
+                    sx={{
+                        marginBottom: 2,
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: 2,
                         backgroundColor: theme.palette.background.default,
                         border: '2px solid black',
                     }}
@@ -41,26 +41,26 @@ const Education: FunctionComponent = () => {
                         sx={{
                             width: '100%',
                             display: 'flex',
-                            flexDirection:'column',
+                            flexDirection: 'column',
                             alignItems: 'center',
                             [theme.breakpoints.up('md')]: {
                                 flexDirection: 'row',
                             },
-                        }} 
+                        }}
                     >
-                        <Box 
+                        <Box
                             sx={{
-                                width: '200px', 
-                                height: 'auto', 
+                                width: '200px',
+                                height: 'auto',
                             }}
                         >
                             <Image
-                                alt="UoD" 
+                                alt="UoD"
                                 src={UoD.src}
                                 width={UoD.width}
                                 height={UoD.height}
                                 style={{
-                                    maxWidth:'100%',
+                                    maxWidth: '100%',
                                     minWidth: '200px',
                                     height: 'auto',
                                     width: 'auto',
@@ -69,13 +69,13 @@ const Education: FunctionComponent = () => {
                         </Box>
                         <Box ml={sm ? 0 : 5} mt={sm ? 2 : 0}>
                             <Typography fontWeight="bold" align={sm ? 'center' : 'left'}>
-                                {t('cv:education.uod.title')} 
+                                {t('cv:education.uod.title')}
                             </Typography>
                             <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? 'center' : 'left'}>
-                                {t('cv:education.uod.subtitle')} 
+                                {t('cv:education.uod.subtitle')}
                             </Typography>
                             <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
-                                {t('cv:education.uod.qualification')} 
+                                {t('cv:education.uod.qualification')}
                             </Typography>
                             <Typography ml={sm ? 0 : 2} variant="body2" align={sm ? 'center' : 'left'}>
                                 {t('cv:education.uod.subject')}
@@ -83,14 +83,14 @@ const Education: FunctionComponent = () => {
                         </Box>
                     </Box>
                 </Card>
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
-                        marginBottom: 5, 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'flex-end', 
-                        padding: 2, 
+                <Card
+                    variant="outlined"
+                    sx={{
+                        marginBottom: 5,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-end',
+                        padding: 2,
                         backgroundColor: theme.palette.background.default,
                         border: '2px solid black',
                     }}
@@ -99,13 +99,13 @@ const Education: FunctionComponent = () => {
                         sx={{
                             width: '100%',
                             display: 'flex',
-                            flexDirection:'column',
+                            flexDirection: 'column',
                             alignItems: 'center',
                             [theme.breakpoints.up('md')]: {
                                 flexDirection: 'row',
                                 width: 'auto',
                             },
-                        }} 
+                        }}
                     >
                         <Box ml={sm ? 0 : 5} mt={sm ? 2 : 0} order={sm ? 1 : 0}>
                             <Typography fontWeight="bold" align={sm ? 'center' : 'left'}>
@@ -121,20 +121,20 @@ const Education: FunctionComponent = () => {
                                 {t('cv:education.hyndland.nationals')}
                             </Typography>
                         </Box>
-                        <Box 
-                            order={sm ? 0 : 1} 
+                        <Box
+                            order={sm ? 0 : 1}
                             sx={{
-                                width: '200px', 
-                                height: 'auto', 
+                                width: '200px',
+                                height: 'auto',
                             }}
                         >
                             <Image
-                                alt="Hyndland" 
+                                alt="Hyndland"
                                 src={Hyndland.src}
                                 width={Hyndland.width}
                                 height={Hyndland.height}
                                 style={{
-                                    maxWidth:'100%',
+                                    maxWidth: '100%',
                                     minWidth: '200px',
                                     height: 'auto',
                                     width: 'auto',

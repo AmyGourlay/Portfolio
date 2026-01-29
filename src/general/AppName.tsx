@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-import { fontFamilyConfig, theme } from 'src/theme/theme.default'
+import { fontFamilyConfig, theme } from '@/theme/theme.default'
 
 const AppName: FunctionComponent = () => {
     const { t } = useTranslation()

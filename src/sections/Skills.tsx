@@ -3,8 +3,8 @@ import { FunctionComponent } from 'react'
 import { Box, Card, Chip, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'src/general/Section'
-import { theme } from 'src/theme/theme.default'
+import Section from '@/general/Section'
+import { theme } from '@/theme/theme.default'
 
 /**
  * Skills section.
@@ -13,17 +13,17 @@ const Skills: FunctionComponent = () => {
     const { t } = useTranslation()
 
     const prominentSkills = [
-        'React', 
-        'JavaScript', 
-        'Typescript', 
-        'Node.js', 
-        'Next.js', 
-        'MUI', 
-        'SASS/SCSS', 
-        'Shopify', 
-        'Liquid', 
-        'Algolia', 
-        'GitHub (+CI/CD)', 
+        'React',
+        'JavaScript',
+        'Typescript',
+        'Node.js',
+        'Next.js',
+        'MUI',
+        'SASS/SCSS',
+        'Shopify',
+        'Liquid',
+        'Algolia',
+        'GitHub (+CI/CD)',
         'JIRA',
     ]
 
@@ -34,21 +34,21 @@ const Skills: FunctionComponent = () => {
             <Typography mb={2} variant="h4" fontWeight="bold">
                 {t('cv:skills.title')}
             </Typography>
-            <Box 
-                mb={5} 
-                sx={{ 
+            <Box
+                mb={5}
+                sx={{
                     display: 'flex',
-                    flexDirection:'column',
+                    flexDirection: 'column',
                     [theme.breakpoints.up('md')]: {
                         flexDirection: 'row',
                     },
                 }}
             >
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
+                <Card
+                    variant="outlined"
+                    sx={{
                         maxWidth: '100%',
-                        padding: '20px', 
+                        padding: '20px',
                         marginBottom: '20px',
                         backgroundColor: theme.palette.background.default,
                         border: '2px solid black',
@@ -82,11 +82,11 @@ const Skills: FunctionComponent = () => {
                         ))}
                     </Box>
                 </Card>
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
-                        maxWidth: '100%', 
-                        padding: 2, 
+                <Card
+                    variant="outlined"
+                    sx={{
+                        maxWidth: '100%',
+                        padding: 2,
                         backgroundColor: theme.palette.background.default,
                         border: '2px solid black',
                         [theme.breakpoints.up('md')]: {

@@ -5,12 +5,12 @@ import { FC } from 'react'
 import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'src/general/Section'
-import Education from 'src/sections/Education'
-import Job from 'src/sections/Job'
-import Projects from 'src/sections/Projects'
-import Publication from 'src/sections/Publication'
-import Skills from 'src/sections/Skills'
+import Section from '@/general/Section'
+import Education from '@/sections/Education'
+import Job from '@/sections/Job'
+import Projects from '@/sections/Projects'
+import Publication from '@/sections/Publication'
+import Skills from '@/sections/Skills'
 
 const Page: FC = () => {
     const { t } = useTranslation()

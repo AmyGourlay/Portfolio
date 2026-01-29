@@ -6,8 +6,8 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { useResizeDetector } from 'react-resize-detector'
 
-import Section from 'src/general/Section'
-import { theme } from 'src/theme/theme.default'
+import Section from '@/general/Section'
+import { theme } from '@/theme/theme.default'
 
 /**
  * Publication section.
@@ -23,15 +23,15 @@ const Publication: FunctionComponent = () => {
         <div ref={ref}>
             <Section maxWidth="xl">
                 <Typography mb={2} variant="h4" fontWeight="bold">
-                    {t('cv:publication.title')} 
+                    {t('cv:publication.title')}
                 </Typography>
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
-                        marginBottom: '20px', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        padding: '20px', 
+                <Card
+                    variant="outlined"
+                    sx={{
+                        marginBottom: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '20px',
                         backgroundColor: theme.palette.background.default,
                         border: '2px solid black',
                     }}
@@ -40,26 +40,26 @@ const Publication: FunctionComponent = () => {
                         sx={{
                             width: '100%',
                             display: 'flex',
-                            flexDirection:'column',
+                            flexDirection: 'column',
                             alignItems: 'center',
                             [theme.breakpoints.up('md')]: {
                                 flexDirection: 'row',
                             },
-                        }} 
+                        }}
                     >
-                        <Box 
+                        <Box
                             sx={{
-                                width: '200px', 
-                                height: 'auto', 
+                                width: '200px',
+                                height: 'auto',
                             }}
                         >
                             <Image
-                                alt="IMX" 
+                                alt="IMX"
                                 src={imx.src}
                                 width={imx.width}
                                 height={imx.height}
                                 style={{
-                                    maxWidth:'100%',
+                                    maxWidth: '100%',
                                     minWidth: '200px',
                                     height: 'auto',
                                     width: 'auto',
@@ -68,10 +68,10 @@ const Publication: FunctionComponent = () => {
                         </Box>
                         <Box ml={sm ? 0 : 5}>
                             <Typography variant="body2" fontWeight="bold" align={sm ? 'center' : 'left'}>
-                                {t('cv:publication.type')} 
+                                {t('cv:publication.type')}
                             </Typography>
                             <Typography variant="body2" align={sm ? 'center' : 'left'}>
-                                {t('cv:publication.subtitle')} 
+                                {t('cv:publication.subtitle')}
                             </Typography>
                         </Box>
                     </Box>

@@ -10,7 +10,7 @@ import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'src/general/Section'
+import Section from '@/general/Section'
 
 /**
  * Technologies section.

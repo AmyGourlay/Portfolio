@@ -5,8 +5,8 @@ import paperAirplanes from 'assets/paper-airplanes.png'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'src/general/Section'
-import { theme } from 'src/theme/theme.default'
+import Section from '@/general/Section'
+import { theme } from '@/theme/theme.default'
 
 /**
  * Heading section.
@@ -15,7 +15,7 @@ const Heading: FunctionComponent = () => {
     const { t } = useTranslation()
 
     return (
-        <Section maxWidth="xl" isFullScreen backgroundColor='#F5E1D9' fadeType='bottom'> 
+        <Section maxWidth="xl" isFullScreen backgroundColor="#F5E1D9" fadeType="bottom">
             <Box
                 component="div"
                 sx={{
@@ -31,30 +31,34 @@ const Heading: FunctionComponent = () => {
                     },
                 }}
             >
-                <Box 
+                <Box
                     sx={{
-                        display: 'flex', 
-                        flexDirection: 'column', 
-                        alignItems: 'center', 
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                     }}
                 >
-                    <Typography variant='h1' mb={2}>{t('home:heading.title')}</Typography>
-                    <Typography align='center' variant='h3' mb={4}>{t('home:heading.subtitle')}</Typography>
+                    <Typography variant="h1" mb={2}>
+                        {t('home:heading.title')}
+                    </Typography>
+                    <Typography align="center" variant="h3" mb={4}>
+                        {t('home:heading.subtitle')}
+                    </Typography>
                 </Box>
-                <Box 
+                <Box
                     sx={{
-                        width: 'auto', 
-                        height: '550px', 
+                        width: 'auto',
+                        height: '550px',
                     }}
                 >
                     <Image
-                        alt="react" 
+                        alt="react"
                         src={paperAirplanes.src}
                         width={paperAirplanes.width}
                         height={paperAirplanes.height}
                         priority
                         style={{
-                            maxHeight:'100%',
+                            maxHeight: '100%',
                             maxWidth: '100%',
                             height: 'auto',
                             width: 'auto',

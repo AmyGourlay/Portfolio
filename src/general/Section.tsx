@@ -2,8 +2,8 @@ import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { Box, Container, ContainerProps } from '@mui/material'
 
-import { Spacing } from 'src/general/utils/config'
-import { theme } from 'src/theme/theme.default'
+import { Spacing } from '@/general/utils/config'
+import { theme } from '@/theme/theme.default'
 
 interface SectionProps extends ContainerProps {
     readonly backgroundColor?: string

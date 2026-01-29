@@ -5,8 +5,8 @@ import { FC } from 'react'
 import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'src/general/Section'
-import ProjectScreen from 'src/sections/ProjectScreen'
+import Section from '@/general/Section'
+import ProjectScreen from '@/sections/ProjectScreen'
 
 const Page: FC = () => {
     const { t } = useTranslation()

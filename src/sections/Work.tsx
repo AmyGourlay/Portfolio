@@ -1,14 +1,14 @@
 import { FunctionComponent } from 'react'
 
-import { Box, Card, CardMedia, Typography } from '@mui/material'
+import { Box, Card, CardMedia, IconButton, Typography } from '@mui/material'
 import nextCodeSnippet2 from 'assets/next-code-snippet-2.png'
 import shopifyIcon from 'assets/shopify-icon.png'
-import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 
-import Icon from 'src/general/Icon'
-import Section from 'src/general/Section'
-import { theme } from 'src/theme/theme.default'
+import Section from '@/general/Section'
+import { theme } from '@/theme/theme.default'
+import { useRouter } from 'next/navigation'
+import { ArrowForward } from '@mui/icons-material'
 
 /**
  * Work section.
@@ -16,13 +16,15 @@ import { theme } from 'src/theme/theme.default'
 const Work: FunctionComponent = () => {
     const { t } = useTranslation()
 
+    const navigation = useRouter()
+
     return (
         <Section maxWidth="xl">
             <Typography variant="h2">{t('home:work.title')}</Typography>
-            <Box 
-                sx={{ 
+            <Box
+                sx={{
                     display: 'flex',
-                    flexDirection:'column',
+                    flexDirection: 'column',
                     [theme.breakpoints.up('md')]: {
                         flexDirection: 'row',
                         justifyContent: 'space-between',
@@ -30,10 +32,10 @@ const Work: FunctionComponent = () => {
                     },
                 }}
             >
-                <Card 
-                    variant="outlined" 
-                    sx={{ 
-                        width: '100%', 
+                <Card
+                    variant="outlined"
+                    sx={{
+                        width: '100%',
                         margin: '25px 0',
                         border: '2px solid black',
                         [theme.breakpoints.up('md')]: {
@@ -52,33 +54,18 @@ const Work: FunctionComponent = () => {
                             },
                         }}
                     />
-                    <Link 
-                        href="/projects/next" 
-                        style={{
-                            textDecoration: 'none', 
-                            color: theme.palette.text.primary, 
-                        }}
-                    >
-                        <Box 
-                            sx={{
-                                display: 'flex', 
-                                alignItems: 'center', 
-                            }}
-                        >
-                            <Typography p={2} variant='h4'>
-                                {t('home:work.next_title')}
-                            </Typography>
-                            <Icon name="arrow_right_alt" />
-                        </Box>
-                    </Link>
-                    <Typography p={2}>
-                        {t('home:work.next_subtitle')}
-                    </Typography>
+                    <IconButton onClick={() => navigation.push('/projects/next')} disableRipple>
+                        <Typography p={2} variant="h4">
+                            {t('home:work.next_title')}
+                        </Typography>
+                        <ArrowForward />
+                    </IconButton>
+                    <Typography p={2}>{t('home:work.next_subtitle')}</Typography>
                 </Card>
-                <Card 
+                <Card
                     variant="outlined"
-                    sx={{ 
-                        width: '100%', 
+                    sx={{
+                        width: '100%',
                         margin: '25px 0',
                         border: '2px solid black',
                         [theme.breakpoints.up('md')]: {
@@ -96,28 +83,13 @@ const Work: FunctionComponent = () => {
                             },
                         }}
                     />
-                    <Link 
-                        href="/projects/shopify" 
-                        style={{
-                            textDecoration: 'none', 
-                            color: theme.palette.text.primary, 
-                        }}
-                    >
-                        <Box 
-                            sx={{
-                                display: 'flex', 
-                                alignItems: 'center', 
-                            }}
-                        >
-                            <Typography p={2} variant='h4'>
-                                {t('home:work.shopify_title')}
-                            </Typography>
-                            <Icon name="arrow_right_alt" />
-                        </Box>
-                    </Link>
-                    <Typography p={2}>
-                        {t('home:work.shopify_subtitle')}
-                    </Typography>
+                    <IconButton onClick={() => navigation.push('/projects/shopify')} disableRipple>
+                        <Typography p={2} variant="h4">
+                            {t('home:work.shopify_title')}
+                        </Typography>
+                        <ArrowForward />
+                    </IconButton>
+                    <Typography p={2}>{t('home:work.shopify_subtitle')}</Typography>
                 </Card>
             </Box>
         </Section>
