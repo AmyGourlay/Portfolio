@@ -5,7 +5,7 @@ import paperAirplanes from 'assets/paper-airplanes.png'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-import Section from '@/general/Section'
+import HeroSection from '@/general/HeroSection'
 import { theme } from '@/theme/theme.default'
 
 /**
@@ -15,7 +15,7 @@ const Heading: FunctionComponent = () => {
     const { t } = useTranslation()
 
     return (
-        <Section maxWidth="xl" isFullScreen backgroundColor="#F5E1D9" fadeType="bottom">
+        <HeroSection maxWidth="xl" isFullScreen backgroundColor="#F5E1D9" fadeType="bottom">
             <Box
                 component="div"
                 sx={{
@@ -67,7 +67,7 @@ const Heading: FunctionComponent = () => {
                     />
                 </Box>
             </Box>
-        </Section>
+        </HeroSection>
     )
 }
 

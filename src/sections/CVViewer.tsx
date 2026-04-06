@@ -202,7 +202,7 @@ const CVViewer: FC<CVViewerProps> = ({ pdfPath }) => {
                             >
                                 <Page
                                     pageNumber={currentPage}
-                                    scale={1.5}
+                                    scale={1.4}
                                     inputRef={pageRef}
                                     onRenderTextLayerSuccess={handleUpdateHighlightRects}
                                 />

@@ -5,7 +5,7 @@ import { Box, Container, ContainerProps } from '@mui/material'
 import { Spacing } from '@/general/utils/config'
 import { theme } from '@/theme/theme.default'
 
-interface SectionProps extends ContainerProps {
+interface HeroSectionProps extends ContainerProps {
     readonly backgroundColor?: string
     readonly fadeType?: string
     readonly isFullScreen?: boolean
@@ -16,7 +16,7 @@ interface SectionProps extends ContainerProps {
 /**
  * Standard section layout with spacing, background colour and optional ellipse design.
  */
-const Section: FunctionComponent<PropsWithChildren<SectionProps>> = ({
+const HeroSection: FunctionComponent<PropsWithChildren<HeroSectionProps>> = ({
     children,
     maxWidth = 'sm',
     isFullScreen = false,
@@ -73,10 +73,10 @@ const Section: FunctionComponent<PropsWithChildren<SectionProps>> = ({
                         md: Spacing.Body,
                     },
                     [theme.breakpoints.up('md')]: {
-                        height: isFullScreen && 'calc(100vh - 69px)',
+                        height: isFullScreen && 'calc(100vh - 112px)',
                     },
                     [theme.breakpoints.down('md')]: {
-                        height: isFullScreen && 'calc(100vh - 69px)',
+                        height: isFullScreen && 'calc(100vh - 112px)',
                     },
                 }}
                 maxWidth={maxWidth}
@@ -88,6 +88,6 @@ const Section: FunctionComponent<PropsWithChildren<SectionProps>> = ({
     )
 }
 
-export type { SectionProps }
+export type { HeroSectionProps }
 
-export default Section
+export default HeroSection
