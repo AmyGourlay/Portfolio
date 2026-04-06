@@ -6,24 +6,18 @@ import { Search } from '@mui/icons-material'
 import { Clear, NavigateBefore, NavigateNext } from '@mui/icons-material'
 import { Box, Button, Chip, TextField, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-
-import { pdfTextSearch } from '@/utils/pdfTextSearch'
+import { type SearchMatch } from '@/utils/pdfTextSearch'
 
 interface CVSearchProps {
-    readonly numberPages: number
     readonly currentPage: number
     readonly setCurrentPage: (number: number) => void
     readonly searchText: string
-    readonly setSearchText: (text: string) => void
+    readonly onSearch: (text: string) => void
+    readonly onQuickSearch: (text: string) => void
+    readonly onClear: () => void
     readonly matches: SearchMatch[]
-    readonly setMatches: (matches: SearchMatch[]) => void
     readonly currentMatchIndex: number
     readonly setCurrentMatchIndex: (index: number) => void
-}
-
-interface SearchMatch {
-    pageNum: number
-    occurrenceOnPage: number
 }
 
 interface QuickSearchTerm {
@@ -47,13 +41,13 @@ const quickSearchTerms: QuickSearchTerm[] = [
 ]
 
 const CVSearch: FC<CVSearchProps> = ({
-    numberPages,
     currentPage,
     setCurrentPage,
     searchText,
-    setSearchText,
+    onSearch,
+    onQuickSearch,
+    onClear,
     matches,
-    setMatches,
     currentMatchIndex,
     setCurrentMatchIndex,
 }) => {
@@ -118,14 +112,7 @@ const CVSearch: FC<CVSearchProps> = ({
                 <TextField
                     placeholder={t('viewer.search.placeholder')}
                     value={searchText}
-                    onChange={(event_: React.ChangeEvent<HTMLInputElement>) => {
-                        setSearchText(event_.target.value)
-
-                        pdfTextSearch({
-                            query: event_.target.value,
-                            numberPages,
-                        })
-                    }}
+                    onChange={(event_) => onSearch(event_.target.value)}
                     size="small"
                     fullWidth
                     InputProps={{
@@ -160,14 +147,7 @@ const CVSearch: FC<CVSearchProps> = ({
                         label={t(`viewer.quickSearch.${term.key}`)}
                         clickable
                         color={searchText === term.query ? 'primary' : 'default'}
-                        onClick={() => {
-                            setSearchText(term.query)
-
-                            pdfTextSearch({
-                                query: term.query,
-                                numberPages,
-                            })
-                        }}
+                        onClick={() => onQuickSearch(term.query)}
                         variant={searchText === term.query ? 'filled' : 'outlined'}
                     />
                 ))}
@@ -195,18 +175,7 @@ const CVSearch: FC<CVSearchProps> = ({
                 >
                     {t('viewer.actions.next')}
                 </Button>
-                <Button
-                    size="small"
-                    startIcon={<Clear />}
-                    onClick={() => {
-                        setSearchText('')
-
-                        setMatches([])
-
-                        setCurrentMatchIndex(-1)
-                    }}
-                    color="primary"
-                >
+                <Button size="small" startIcon={<Clear />} onClick={onClear} color="primary">
                     {t('viewer.actions.clear')}
                 </Button>
             </Box>

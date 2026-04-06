@@ -12,6 +12,7 @@ import { Document, Page, pdfjs } from 'react-pdf'
 import CVSearch from './CVSearch'
 import { withBasePath } from '@/utils/basePath'
 import { centerActiveMatch } from '@/utils/centerActiveMatch'
+import { pdfTextSearch, type SearchMatch } from '@/utils/pdfTextSearch'
 import { type HighlightRect, type TextLayerBounds, updateHighlightRects } from '@/utils/updateHighlightRects'
 
 pdfjs.GlobalWorkerOptions.workerSrc = withBasePath('/pdf.worker.min.mjs')
@@ -27,11 +28,6 @@ type LoadedPdfDocument = {
 
 interface CVViewerProps {
     readonly pdfPath: string
-}
-
-interface SearchMatch {
-    pageNum: number
-    occurrenceOnPage: number
 }
 
 const CVViewer: FC<CVViewerProps> = ({ pdfPath }) => {
@@ -98,6 +94,49 @@ const CVViewer: FC<CVViewerProps> = ({ pdfPath }) => {
     useEffect(() => {
         handleUpdateHighlightRects()
     }, [activeOccurrenceOnPage, currentPage, searchText, handleUpdateHighlightRects])
+
+    const performSearch = useCallback(
+        async (query: string) => {
+            const result = await pdfTextSearch({
+                query,
+                numberPages,
+                pdfDocument: pdfDocumentRef.current,
+                currentPage,
+            })
+
+            setMatches(result.matches)
+            setCurrentMatchIndex(result.currentMatchIndex)
+
+            if (result.nextPage !== null) {
+                setCurrentPage(result.nextPage)
+            }
+        },
+        [currentPage, numberPages]
+    )
+
+    const handleSearch = useCallback(
+        (value: string) => {
+            setSearchText(value)
+
+            void performSearch(value)
+        },
+        [performSearch]
+    )
+
+    const handleQuickSearch = useCallback(
+        (value: string) => {
+            setSearchText(value)
+
+            void performSearch(value)
+        },
+        [performSearch]
+    )
+
+    const handleClear = useCallback(() => {
+        setSearchText('')
+        setMatches([])
+        setCurrentMatchIndex(-1)
+    }, [])
 
     const handleDocumentLoadSuccess = (pdfDocument: LoadedPdfDocument) => {
         pdfDocumentRef.current = pdfDocument
@@ -246,9 +285,10 @@ const CVViewer: FC<CVViewerProps> = ({ pdfPath }) => {
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
                 searchText={searchText}
-                setSearchText={setSearchText}
+                onSearch={handleSearch}
+                onQuickSearch={handleQuickSearch}
+                onClear={handleClear}
                 matches={matches}
-                setMatches={setMatches}
                 currentMatchIndex={currentMatchIndex}
                 setCurrentMatchIndex={setCurrentMatchIndex}
             />
