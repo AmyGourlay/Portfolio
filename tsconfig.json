@@ -1,11 +1,7 @@
 {
     "compilerOptions": {
-        "paths": {
-            "@/*": ["./src/*"]
-        },
         "target": "ES2020",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "downlevelIteration": true,
         "skipLibCheck": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
@@ -15,7 +11,7 @@
         "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "preserve",
+        "jsx": "react-jsx",
         "incremental": true,
         "allowJs": false,
         "allowUnreachableCode": false,
@@ -37,13 +33,17 @@
             {
                 "name": "next"
             }
-        ]
+        ],
+        "paths": {
+            "@/*": ["./src/*"],
+            "assets/*": ["./assets/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
-    "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/*.d.ts"],
+    "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/*.d.ts", ".next/dev/types/**/*.ts"],
     "exclude": ["node_modules"]
 }

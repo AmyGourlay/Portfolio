@@ -1,12 +1,12 @@
 import { loadEnvConfig } from '@next/env'
 import { flatten } from 'flatten-anything'
+import { glob } from 'glob'
 import { merge } from 'merge-anything'
 import { mkdirp } from 'mkdirp'
 import { writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
-import { glob } from 'glob'
 
 import config from '@/translations/config.json'
 import { parseFile } from '@/utils/parseFile'

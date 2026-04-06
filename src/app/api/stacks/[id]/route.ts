@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 import { techStackData } from '@/lib/api-data'
 
@@ -8,11 +8,12 @@ interface Params {
 
 /**
  * GET /api/stacks/[id]
- * Returns a single tech stack by ID
+ * Returns a single tech stack by ID.
  */
-export async function GET(_request: Request, { params }: { params: Params }) {
+export const GET = async (_request: NextRequest, { params }: { params: Promise<Params> }): Promise<NextResponse> => {
     try {
-        const { id } = params
+        const { id } = await params
+
         const stack = techStackData.find((item) => item.id === id)
 
         if (!stack) {
@@ -21,7 +22,9 @@ export async function GET(_request: Request, { params }: { params: Params }) {
                     success: false,
                     error: 'Tech stack not found',
                 },
-                { status: 404 }
+                {
+                    status: 404,
+                }
             )
         }
 
@@ -29,13 +32,15 @@ export async function GET(_request: Request, { params }: { params: Params }) {
             success: true,
             data: stack,
         })
-    } catch (error) {
+    } catch {
         return NextResponse.json(
             {
                 success: false,
                 error: 'Failed to fetch tech stack',
             },
-            { status: 500 }
+            {
+                status: 500,
+            }
         )
     }
 }

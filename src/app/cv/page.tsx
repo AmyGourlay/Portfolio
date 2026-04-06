@@ -1,42 +1,30 @@
 'use client'
 
-import { FC } from 'react'
+import { ComponentType, FC } from 'react'
 
-import { Box, Typography } from '@mui/material'
-import { useTranslation } from 'react-i18next'
+import { Box } from '@mui/material'
+import dynamic from 'next/dynamic'
 
-import Section from '@/general/Section'
-import Education from '@/sections/Education'
-import Job from '@/sections/Job'
-import Projects from '@/sections/Projects'
-import Publication from '@/sections/Publication'
-import Skills from '@/sections/Skills'
+const CVViewer = dynamic<{ pdfPath: string }>(
+    () => import('@/sections/CVViewer').then((module_) => module_.default as ComponentType<{ pdfPath: string }>),
+    {
+        ssr: false,
+    }
+)
 
-const Page: FC = () => {
-    const { t } = useTranslation()
-
-    return (
-        <>
-            <Section maxWidth="xl">
-                <Box
-                    mt={2}
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Typography variant="h2">{t('cv:title')}</Typography>
-                    <Typography>{t('cv:email')}</Typography>
-                </Box>
-            </Section>
-            <Skills />
-            <Education />
-            <Publication />
-            <Job />
-            <Projects />
-        </>
-    )
-}
+const Page: FC = () => (
+    <Box
+        sx={{
+            height: '100%',
+            maxHeight: '100%',
+            minHeight: 0,
+            overflow: 'hidden',
+            p: 2,
+            boxSizing: 'border-box',
+        }}
+    >
+        <CVViewer pdfPath="/AmyGourlayCV.pdf" />
+    </Box>
+)
 
 export default Page

@@ -2,8 +2,10 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { CustomTypeOptions } from 'react-i18next'
 
+type TranslationNamespace = Extract<keyof CustomTypeOptions['resources'], string>
+
 interface GetServerSidePropsWithTranslations {
-    (namespaces?: (keyof CustomTypeOptions['resources'])[]): {
+    (namespaces?: TranslationNamespace[]): {
         getStaticProps: GetStaticProps
         getStaticPaths: GetStaticPaths
     }

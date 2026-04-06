@@ -8,6 +8,26 @@ body.darkmode--activated .darkmode-ignore {
     mix-blend-mode: difference;
 }
 
+body.darkmode--activated .cv-pdf-surface,
+body.darkmode--activated .cv-pdf-surface *,
+body.darkmode--activated .cv-pdf-surface canvas,
+body.darkmode--activated .cv-pdf-surface span,
+body.darkmode--activated .cv-pdf-surface div {
+    mix-blend-mode: normal !important;
+    background-blend-mode: normal !important;
+    color: inherit !important;
+}
+
+body.darkmode--activated .cv-pdf-surface,
+body.darkmode--activated .cv-pdf-surface div,
+body.darkmode--activated .cv-pdf-surface span {
+    background-color: transparent !important;
+}
+
+body.darkmode--activated .cv-pdf-surface .react-pdf__Page {
+    background-color: white !important;
+}
+
 .darkmode--activated a {
     color: #000;
 }

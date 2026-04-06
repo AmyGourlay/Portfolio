@@ -3,21 +3,20 @@
 import { FunctionComponent, ReactNode, useEffect } from 'react'
 
 import { Box } from '@mui/material'
-
-import Footer from '@/general/Footer'
-import { Header } from '@/general/Header'
-import DefaultThemeProvider from '@/general/DefaultThemeProvider'
-import { poppins } from './fonts'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Darkmode from 'darkmode-js'
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { resources } from '@/translations/resources'
-import Darkmode from 'darkmode-js'
 
 import '../../styles.css'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { poppins } from './fonts'
+import DefaultThemeProvider from '@/general/DefaultThemeProvider'
+import Footer from '@/general/Footer'
+import { Header } from '@/general/Header'
+import { resources } from '@/translations/resources'
 
 interface PageLayoutProps {
-    children?: ReactNode
+    readonly children?: ReactNode
 }
 
 i18next.use(initReactI18next).init({
@@ -45,23 +44,43 @@ const options = {
 const PageLayout: FunctionComponent<PageLayoutProps> = ({ children }) => {
     useEffect(() => {
         const darkmode = new Darkmode(options)
+
         darkmode.showWidget()
     }, [])
 
     return (
         <html lang="en" className={poppins.variable}>
-            <body>
+            <body
+                style={{
+                    margin: 0,
+                    height: '100vh',
+                    overflow: 'hidden',
+                }}
+            >
                 <QueryClientProvider client={queryClient}>
                     <DefaultThemeProvider>
                         <Box
                             position="relative"
                             sx={{
-                                height: 'calc(100vh - 72px)',
-                                top: '72px',
+                                height: '100vh',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                overflow: 'hidden',
+                                pt: '72px',
+                                boxSizing: 'border-box',
                             }}
                         >
                             <Header />
-                            {children}
+                            <Box
+                                sx={{
+                                    flex: 1,
+                                    minHeight: 0,
+                                    overflowX: 'hidden',
+                                    overflowY: 'auto',
+                                }}
+                            >
+                                {children}
+                            </Box>
                             <Footer />
                         </Box>
                     </DefaultThemeProvider>

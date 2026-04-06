@@ -4,9 +4,10 @@ const nextConfig: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
+    output: 'standalone',
+    cacheComponents: false,
+    reactCompiler: true,
+    allowedDevOrigins: ['127.0.0.1', 'localhost'],
 }
 
 export default nextConfig

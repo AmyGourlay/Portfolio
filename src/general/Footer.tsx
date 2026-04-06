@@ -25,8 +25,9 @@ const FooterRoot = styled('footer', {
     color: theme.palette.text.secondary,
     position: 'sticky',
     padding: theme.spacing(0, Spacing.Header),
-    height: theme.spacing(GeneralConfig.ToolbarHeight),
-    top: theme.spacing(GeneralConfig.ToolbarHeight * order),
+    height: theme.spacing(GeneralConfig.FooterHeight),
+    marginTop: 'auto',
+    bottom: theme.spacing(GeneralConfig.FooterHeight * order),
     zIndex: theme.zIndex.tooltip,
 }))
 

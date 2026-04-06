@@ -1,14 +1,4 @@
-// Central data
-
-export interface TechStack {
-    id: string
-    name: string
-    icon: string
-    category: string
-    description: string
-}
-
-export interface Project {
+interface Project {
     id: string
     title: string
     description: string
@@ -18,7 +8,46 @@ export interface Project {
     techStack: string[]
 }
 
-export const techStackData: TechStack[] = [
+// Central data
+interface TechStack {
+    id: string
+    name: string
+    icon: string
+    category: string
+    description: string
+}
+
+const projectsData: Project[] = [
+    {
+        id: '1',
+        title: 'Image Toolkit',
+        description: 'Advanced image processing with optimization and transformation',
+        link: '/demos/image-toolkit',
+        icon: '🖼️',
+        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        techStack: ['Next.js', 'Sharp', 'TypeScript'],
+    },
+    {
+        id: '2',
+        title: 'PDF Master',
+        description: 'Generate, analyze and manipulate PDFs with precision',
+        link: '/demos/pdf-master',
+        icon: '📄',
+        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        techStack: ['React', 'PDF.js', 'Material UI'],
+    },
+    {
+        id: '3',
+        title: 'AI Chat',
+        description: 'Interactive AI chatbot with streaming responses',
+        link: '/demos/ai-chat',
+        icon: '🤖',
+        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        techStack: ['OpenAI API', 'WebSockets', 'TypeScript'],
+    },
+]
+
+const techStackData: TechStack[] = [
     {
         id: '1',
         name: 'Next.js',
@@ -84,32 +113,6 @@ export const techStackData: TechStack[] = [
     },
 ]
 
-export const projectsData: Project[] = [
-    {
-        id: '1',
-        title: 'Image Toolkit',
-        description: 'Advanced image processing with optimization and transformation',
-        link: '/demos/image-toolkit',
-        icon: '🖼️',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        techStack: ['Next.js', 'Sharp', 'TypeScript'],
-    },
-    {
-        id: '2',
-        title: 'PDF Master',
-        description: 'Generate, analyze and manipulate PDFs with precision',
-        link: '/demos/pdf-master',
-        icon: '📄',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        techStack: ['React', 'PDF.js', 'Material UI'],
-    },
-    {
-        id: '3',
-        title: 'AI Chat',
-        description: 'Interactive AI chatbot with streaming responses',
-        link: '/demos/ai-chat',
-        icon: '🤖',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-        techStack: ['OpenAI API', 'WebSockets', 'TypeScript'],
-    },
-]
+export type { Project, TechStack }
+
+export { projectsData, techStackData }

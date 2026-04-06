@@ -1,6 +1,7 @@
 import { FunctionComponent, useId } from 'react'
 
 import isPropValid from '@emotion/is-prop-valid'
+import { Close, Menu } from '@mui/icons-material'
 import { AppBar, Box, Drawer, IconButton, Slide, Stack, styled, Typography } from '@mui/material'
 import { bindPopover, usePopupState } from 'material-ui-popup-state/hooks'
 import Link from 'next/link'
@@ -9,7 +10,6 @@ import { useResizeDetector } from 'react-resize-detector'
 import AppName from '@/general/AppName'
 import { GeneralConfig, Spacing } from '@/general/utils/config'
 import { theme } from '@/theme/theme.default'
-import { Close, Menu } from '@mui/icons-material'
 
 interface MenuOptions {
     slug?: string
@@ -65,14 +65,6 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
         {
             displayName: 'CV',
             slug: 'cv',
-        },
-        {
-            displayName: 'Next',
-            slug: 'projects/next',
-        },
-        {
-            displayName: 'Shopify',
-            slug: 'projects/shopify',
         },
     ]
 

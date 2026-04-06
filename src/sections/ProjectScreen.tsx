@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react'
 
+import { ExpandMore } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material'
 import Link from 'next/link'
 
 import Section from '@/general/Section'
-import { ExpandMore } from '@mui/icons-material'
 
 interface ProjectScreenProps {
     readonly title: string
