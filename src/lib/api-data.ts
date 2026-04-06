@@ -1,13 +1,3 @@
-interface Project {
-    id: string
-    title: string
-    description: string
-    icon: string
-    gradient: string
-    link: string
-    techStack: string[]
-}
-
 // Central data
 interface TechStack {
     id: string
@@ -16,36 +6,6 @@ interface TechStack {
     category: string
     description: string
 }
-
-const projectsData: Project[] = [
-    {
-        id: '1',
-        title: 'Image Toolkit',
-        description: 'Advanced image processing with optimization and transformation',
-        link: '/demos/image-toolkit',
-        icon: '🖼️',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        techStack: ['Next.js', 'Sharp', 'TypeScript'],
-    },
-    {
-        id: '2',
-        title: 'PDF Master',
-        description: 'Generate, analyze and manipulate PDFs with precision',
-        link: '/demos/pdf-master',
-        icon: '📄',
-        gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        techStack: ['React', 'PDF.js', 'Material UI'],
-    },
-    {
-        id: '3',
-        title: 'AI Chat',
-        description: 'Interactive AI chatbot with streaming responses',
-        link: '/demos/ai-chat',
-        icon: '🤖',
-        gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-        techStack: ['OpenAI API', 'WebSockets', 'TypeScript'],
-    },
-]
 
 const techStackData: TechStack[] = [
     {
@@ -113,6 +73,6 @@ const techStackData: TechStack[] = [
     },
 ]
 
-export type { Project, TechStack }
+export type { TechStack }
 
-export { projectsData, techStackData }
+export { techStackData }
