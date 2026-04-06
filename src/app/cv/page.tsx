@@ -5,6 +5,8 @@ import { ComponentType, FC } from 'react'
 import { Box } from '@mui/material'
 import dynamic from 'next/dynamic'
 
+import { withBasePath } from '@/utils/basePath'
+
 const CVViewer = dynamic<{ pdfPath: string }>(
     () => import('@/sections/CVViewer').then((module_) => module_.default as ComponentType<{ pdfPath: string }>),
     {
@@ -23,7 +25,7 @@ const Page: FC = () => (
             boxSizing: 'border-box',
         }}
     >
-        <CVViewer pdfPath="/AmyGourlayCV.pdf" />
+        <CVViewer pdfPath={withBasePath('/AmyGourlayCV.pdf')} />
     </Box>
 )
 

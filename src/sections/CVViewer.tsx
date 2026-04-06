@@ -10,10 +10,11 @@ import { useTranslation } from 'react-i18next'
 import { Document, Page, pdfjs } from 'react-pdf'
 
 import CVSearch from './CVSearch'
+import { withBasePath } from '@/utils/basePath'
 import { centerActiveMatch } from '@/utils/centerActiveMatch'
 import { type HighlightRect, type TextLayerBounds, updateHighlightRects } from '@/utils/updateHighlightRects'
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'
+pdfjs.GlobalWorkerOptions.workerSrc = withBasePath('/pdf.worker.min.mjs')
 
 type LoadedPdfDocument = {
     numPages: number
@@ -201,7 +202,7 @@ const CVViewer: FC<CVViewerProps> = ({ pdfPath }) => {
                             >
                                 <Page
                                     pageNumber={currentPage}
-                                    scale={1.5}
+                                    scale={1.4}
                                     inputRef={pageRef}
                                     onRenderTextLayerSuccess={handleUpdateHighlightRects}
                                 />
