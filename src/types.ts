@@ -1,13 +1,12 @@
 import { ReactNode } from 'react'
 
 import { NextApiRequest, NextPage } from 'next'
-import { Opaque } from 'type-fest'
 
 type NextPageWithLayout<TProps = unknown> = NextPage<TProps> & {
     getLayout?: (page: ReactNode, pageProps: TProps) => ReactNode
 }
 
-type QueryParamValue = string | string[] | Opaque<string, unknown>
+type QueryParamValue = string | string[] | string
 
 type QueryParams = Record<string, QueryParamValue> | QueryParamValue
 

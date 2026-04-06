@@ -6,6 +6,10 @@
         "title": "Amy Gourlay",
         "subtitle": "Web Applications Developer"
     },
+    "technical_expertise": "Technical Expertise",
+    "interactive_examples": "Interactive Examples",
+    "stacks_error": "Failed to load tech stacks. Please try again later.",
+    "projects_error": "Failed to load projects. Please try again later.",
     "work": {
         "title": "My work",
         "next_title": "My work with Next",
@@ -22,7 +26,7 @@
         "node": "NodeJS"
     },
     "footer": {
-        "title": "AG 2023",
+        "title": "AG 2026",
         "email": "amy.gourlay@ntlworld.com"
     }
 }

@@ -24,6 +24,7 @@ const enum Spacing {
  */
 const enum GeneralConfig {
     ToolbarHeight = 9,
+    FooterHeight = 5,
     InputHeight = 6,
     ButtonMediumHeight = 5.5,
     ButtonSmallHeight = 3,

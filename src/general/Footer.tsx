@@ -4,7 +4,7 @@ import isPropValid from '@emotion/is-prop-valid'
 import { Box, Stack, styled, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-import { GeneralConfig, Spacing } from 'src/general/utils/config'
+import { GeneralConfig, Spacing } from '@/general/utils/config'
 
 interface FooterProps {
     readonly disableStickyShadow?: boolean
@@ -25,8 +25,9 @@ const FooterRoot = styled('footer', {
     color: theme.palette.text.secondary,
     position: 'sticky',
     padding: theme.spacing(0, Spacing.Header),
-    height: theme.spacing(GeneralConfig.ToolbarHeight),
-    top: theme.spacing(GeneralConfig.ToolbarHeight * order),
+    height: theme.spacing(GeneralConfig.FooterHeight),
+    marginTop: 'auto',
+    bottom: theme.spacing(GeneralConfig.FooterHeight * order),
     zIndex: theme.zIndex.tooltip,
 }))
 

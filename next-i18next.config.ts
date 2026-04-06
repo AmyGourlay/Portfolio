@@ -1,11 +1,10 @@
-const { readFileSync } = require('node:fs')
-
-const path = require('node:path')
+import type { UserConfig } from 'next-i18next'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
 
 const config = JSON.parse(readFileSync(path.resolve('./src/translations/config.json'), 'utf8'))
 
-/** @type {import('next-i18next').UserConfig} */
-const i18NextConfig = {
+const i18NextConfig: UserConfig = {
     i18n: config['default'] || config.default,
     defaultNS: 'general',
     react: {
@@ -13,4 +12,4 @@ const i18NextConfig = {
     },
 }
 
-module.exports = i18NextConfig
+export default i18NextConfig

@@ -2,9 +2,9 @@ import { FunctionComponent, PropsWithChildren } from 'react'
 
 import { Box } from '@mui/material'
 
-import Footer from 'src/general/Footer'
-import { Header } from 'src/general/Header'
-import PageTitle from 'src/general/PageTitle'
+import Footer from '@/general/Footer'
+import { Header } from '@/general/Header'
+import PageTitle from '@/general/PageTitle'
 
 interface menuOptions {
     slug?: string

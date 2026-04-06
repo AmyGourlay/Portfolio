@@ -1,18 +1,15 @@
-import {
-    FunctionComponent,
-    useId,
-} from 'react'
+import { FunctionComponent, useId } from 'react'
 
 import isPropValid from '@emotion/is-prop-valid'
-import { AppBar, Box, Button, Drawer, Slide, Stack, styled, Typography } from '@mui/material'
+import { Close, Menu } from '@mui/icons-material'
+import { AppBar, Box, Drawer, IconButton, Slide, Stack, styled, Typography } from '@mui/material'
 import { bindPopover, usePopupState } from 'material-ui-popup-state/hooks'
 import Link from 'next/link'
 import { useResizeDetector } from 'react-resize-detector'
 
-import AppName from 'src/general/AppName'
-import Icon from 'src/general/Icon'
-import { GeneralConfig, Spacing } from 'src/general/utils/config'
-import { theme } from 'src/theme/theme.default'
+import AppName from '@/general/AppName'
+import { GeneralConfig, Spacing } from '@/general/utils/config'
+import { theme } from '@/theme/theme.default'
 
 interface MenuOptions {
     slug?: string
@@ -66,16 +63,8 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
 
     const menuOptions = [
         {
-            displayName: 'CV', 
+            displayName: 'CV',
             slug: 'cv',
-        }, 
-        {
-            displayName: 'Next', 
-            slug: 'projects/next',
-        }, 
-        {
-            displayName: 'Shopify', 
-            slug: 'projects/shopify',
         },
     ]
 
@@ -98,20 +87,14 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                     >
                         {md ? (
                             <>
-                                <Button
-                                    variant="text"
+                                <IconButton
                                     onClick={drawerPopupState.open}
                                     sx={{
                                         padding: '0 !important',
                                     }}
                                 >
-                                    <Icon
-                                        name="menu"
-                                        sx={{
-                                            color: theme.palette.text.primary,
-                                        }}
-                                    />
-                                </Button>
+                                    <Menu />
+                                </IconButton>
                                 <Drawer
                                     anchor="top"
                                     transitionDuration={500}
@@ -128,14 +111,14 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                     }}
                                 >
                                     <DrawerHeader>
-                                        <Button
+                                        <IconButton
                                             onClick={drawerPopupState.close}
                                             sx={{
                                                 padding: '0 26px !important',
                                             }}
                                         >
-                                            <Icon color={theme.palette.text.primary} name="close" />
-                                        </Button>
+                                            <Close />
+                                        </IconButton>
                                         <Link
                                             href="/"
                                             style={{
@@ -230,10 +213,7 @@ const Header: FunctionComponent<HeaderProps> = ({ order = 0 }) => {
                                                 textDecoration: 'none',
                                             }}
                                         >
-                                            <Typography
-                                                variant="h5"
-                                                color={theme.palette.text.primary}
-                                            >
+                                            <Typography variant="h5" color={theme.palette.text.primary}>
                                                 {option.displayName}
                                             </Typography>
                                         </Link>

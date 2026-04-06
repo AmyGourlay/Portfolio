@@ -1,4 +1,4 @@
-import { Color } from 'src/theme/types'
+import { Color } from '@/theme/types'
 
 /**
  * Disables color prop values which are not theme colors, for example values like "default" and "inherit". Useful
